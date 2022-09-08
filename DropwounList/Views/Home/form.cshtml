@@ -1,0 +1,33 @@
+﻿@model DropwounList.Models.Class1
+@{
+    ViewBag.Title = "form";
+}
+
+<h2>form</h2>
+
+@using (Html.BeginForm("form", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(a => a.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.name, "", new { @class = "st" })
+
+    </div>
+    <div class="form-group">
+        <label>Roll</label>
+        @Html.TextBoxFor(a => a.roll, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.roll, "", new { @class = "st" })
+
+    </div>
+
+
+    <div class="form-group">
+        <label>City</label>
+        @Html.DropDownListFor(a => a.city, new SelectList(ViewBag.l), "---Select---", new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.roll, "", new { @class = "st" })
+
+    </div>
+
+    <button type="submit">Submit</button>
+
+}

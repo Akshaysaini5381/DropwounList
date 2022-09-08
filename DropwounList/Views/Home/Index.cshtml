@@ -1,0 +1,25 @@
+﻿@model List<DropwounList.Models.Class1>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>roll</th>
+        <th>city</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.roll</td>
+            <td>@item.city</td>
+        </tr>
+    }
+</table>
